@@ -3,20 +3,20 @@ import { Link, NavLink } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav className="bg-white shadow-sm border-b border-gray-200">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        
-        <Link to="/" className="text-2xl font-bold text-indigo-600">
+    <nav className="site-nav">
+      <div className="nav-inner">
+        <Link to="/" className="brand">
+          <span className="brand-mark" aria-hidden="true">Q</span>
           QuickPoll
         </Link>
 
-        <div className="flex items-center gap-6">
+        <div className="nav-links">
           <NavLink
             to="/"
             className={({ isActive }) =>
               isActive
-                ? 'text-indigo-600 font-semibold'
-                : 'text-gray-600 hover:text-indigo-600'
+                ? 'nav-link active'
+                : 'nav-link'
             }
           >
             Home
@@ -24,12 +24,11 @@ function Navbar() {
 
           <Link
             to="/create"
-            className="bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition"
+            className="nav-cta"
           >
             Create Poll
           </Link>
         </div>
-
       </div>
     </nav>
   );

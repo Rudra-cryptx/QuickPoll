@@ -6,15 +6,17 @@ import PollDetails from './pages/PollDetails';
 
 function App() {
   return (
-    <>
+    <div className="app-shell">
       <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/create" element={<CreatePoll />} />
-        <Route path="/poll/:id" element={<PollDetails />} />
-      </Routes>
-    </>
+      <main className="app-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/create" element={<CreatePoll />} />
+          <Route path="/poll/:id" element={<PollDetails />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
 

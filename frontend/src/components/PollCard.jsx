@@ -8,22 +8,22 @@ function PollCard({ poll }) {
   );
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition">
-      <h2 className="text-lg font-semibold text-gray-800 mb-4">
+    <article className="poll-card p-6">
+      <h2 className="poll-card__question mb-4">
         {poll.question}
       </h2>
 
-      <p className="text-sm text-gray-500 mb-4">
+      <p className="poll-card__votes mb-4">
         {totalVotes} votes
       </p>
 
       <Link
         to={`/poll/${poll._id}`}
-        className="text-indigo-600 font-semibold hover:underline"
+        className="poll-card__link"
       >
-        View Poll →
+        View poll <span aria-hidden="true">→</span>
       </Link>
-    </div>
+    </article>
   );
 }
 
